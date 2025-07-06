@@ -12,11 +12,28 @@ dist
 dist-ssr
 *.local
 
+# Environment files
+.env
+.env.*
+!.env.example
+
+# Build outputs
+build
+
+# Coverage reports
+coverage
+
+# Screenshots
+screenshots
+
+# System artifacts
+.DS_Store
+Thumbs.db
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
 .idea
-.DS_Store
 *.suo
 *.ntvs*
 *.njsproj
