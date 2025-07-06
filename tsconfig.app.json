@@ -42,5 +42,6 @@
       "@/pages/*": ["src/pages/*"]
     }
   },
-  "include": ["src"]
+  "include": ["src"],
+  "exclude": ["src/services/api.example.tsx"]
 }

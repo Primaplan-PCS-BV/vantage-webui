@@ -16,7 +16,7 @@ export const LoginPage: React.FC = () => {
       await login(email, password);
       // Redirect to home after successful login
       window.location.hash = '#';
-    } catch (err) {
+    } catch {
       setLoginError('Invalid email or password');
     }
   };
