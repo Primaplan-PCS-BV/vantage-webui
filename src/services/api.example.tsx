@@ -25,7 +25,7 @@ setNotificationHandler((type, message) => {
 });
 
 // Example 1: Send a chat message
-async function sendChatMessage(message: string) {
+async function _sendChatMessage(message: string) {
   try {
     const request: ChatRequest = {
       message,
@@ -54,7 +54,7 @@ async function sendChatMessage(message: string) {
 }
 
 // Example 2: Check API health
-async function checkApiHealth() {
+async function _checkApiHealth() {
   try {
     const health: HealthResponse = await getHealth();
     console.log('API Status:', health.status);
@@ -68,7 +68,7 @@ async function checkApiHealth() {
 }
 
 // Example 3: Get performance stats with retry
-async function getPerformanceWithRetry() {
+async function _getPerformanceWithRetry() {
   try {
     // Retry the request up to 3 times with exponential backoff
     const stats = await retryRequest(
@@ -86,7 +86,7 @@ async function getPerformanceWithRetry() {
 }
 
 // Example 4: Monitor chat burst performance
-async function monitorPerformance(duration: number = 60) {
+async function _monitorPerformance(duration: number = 60) {
   try {
     const result = await monitorChatBurst(duration);
     console.log('Burst monitoring result:', result);
@@ -102,7 +102,7 @@ export const ChatExample = () => {
   const [loading, setLoading] = React.useState(false);
   const [response, setResponse] = React.useState<ChatResponse | null>(null);
 
-  const handleSubmit = async (message: string) => {
+  const _handleSubmit = async (message: string) => {
     setLoading(true);
     try {
       const chatResponse = await postChat({
@@ -134,7 +134,7 @@ export const ChatExample = () => {
 };
 
 // Example usage:
-// sendChatMessage("What's the status of Project Alpha?");
-// checkApiHealth();
-// getPerformanceWithRetry();
-// monitorPerformance(120); // Monitor for 2 minutes
+// _sendChatMessage("What's the status of Project Alpha?");
+// _checkApiHealth();
+// _getPerformanceWithRetry();
+// _monitorPerformance(120); // Monitor for 2 minutes
